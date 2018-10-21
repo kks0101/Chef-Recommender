@@ -6,22 +6,22 @@
     <link rel="stylesheet" href="{{url_for('static', filename='recommenduser.css')}}"
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
+  <title>Recommended Problems</title>
   <body>
     <div class="container">
       <div class="page-header">
         <div class="row">
             <div class="col-md-6"><img class="img-fluid center" src="{{url_for('static', filename='chef.png')}}" alt="Codechef"> </div>
             <div class="col-md-6 headertext">  Problems Recommended </div>
-        </p>
       </div>
       <br><hr><br>
-      <div class="list-group">
+      <p>Click on any of the problem tags to start solving :) </p><br><hr>
+      <div>
         {% for val in result['recommendedProblems'] %}
-          <button type="button" class="list-group-item list-group-item-action">
-          {{val}}
-          </button>
+	        <a href="https://www.codechef.com/problems/{{val}}">{{val}}</a>
         {% endfor %}
       </div>
+    </div>
     </div>
   </body>
 </html>
